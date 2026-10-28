@@ -1,0 +1,362 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Lebanon | عالم الذكاء الاصطناعي</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b14;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 7%;
+            border-bottom: 1px solid #252536;
+            background: #10101c;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #a78bfa;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .badge {
+            background: #211a39;
+            color: #c4b5fd;
+            padding: 9px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 54px);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .hero h1 span {
+            color: #a78bfa;
+        }
+
+        .hero p {
+            color: #aaaabd;
+            font-size: 17px;
+            line-height: 1.9;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 600px;
+            margin: auto;
+            background: #171725;
+            border: 1px solid #343449;
+            border-radius: 14px;
+            padding: 8px;
+        }
+
+        .search-box input {
+            flex: 1;
+            min-width: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 12px;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            border-radius: 9px;
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        .tools {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 25px 70px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            color: #9999ad;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #141421;
+            border: 1px solid #29293c;
+            border-radius: 17px;
+            padding: 25px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #a5a5b8;
+            line-height: 1.8;
+            font-size: 14px;
+            min-height: 50px;
+        }
+
+        .card button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #514078;
+            background: #211a39;
+            color: #c4b5fd;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .card button:hover {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .notice {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 25px;
+            color: #85859a;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #252536;
+            color: #85859a;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                padding-top: 55px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            header {
+                padding: 18px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">AI <span>Lebanon</span></div>
+        <div class="badge">منصة الذكاء الاصطناعي</div>
+    </header>
+
+    <section class="hero">
+        <h1>
+            اكتشف قوة <span>الذكاء الاصطناعي</span>
+        </h1>
+
+        <p>
+            أدوات ذكية تساعدك على الكتابة والتعلم والترجمة
+            والإبداع، في مكان واحد.
+        </p>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="ابحث عن أداة..."
+                aria-label="ابحث عن أداة"
+            >
+
+            <button onclick="searchTools()">بحث 🔎</button>
+        </div>
+    </section>
+
+    <main class="tools">
+        <h2 class="section-title">اكتشف أدواتنا ✨</h2>
+
+        <p class="section-description">
+            اختر الأداة التي تحتاج إليها وابدأ باستكشاف إمكانياتها.
+        </p>
+
+        <div class="grid" id="toolsGrid">
+
+            <div class="card" data-name="المساعد الذكي محادثة أسئلة">
+                <div class="icon">🤖</div>
+                <h3>المساعد الذكي</h3>
+                <p>اطرح أسئلتك واحصل على المساعدة في مختلف الموضوعات.</p>
+                <button onclick="openTool('المساعد الذكي')">
+                    اكتشف الأداة ←
+                </button>
+            </div>
+
+            <div class="card" data-name="الكتابة المقالات النصوص">
+                <div class="icon">✍️</div>
+                <h3>كاتب النصوص</h3>
+                <p>ساعد نفسك على كتابة المقالات والرسائل والمنشورات.</p>
+                <button onclick="openTool('كاتب النصوص')">
+                    اكتشف الأداة ←
+                </button>
+            </div>
+
+            <div class="card" data-name="الترجمة اللغات مترجم">
+                <div class="icon">🌍</div>
+                <h3>المترجم الذكي</h3>
+                <p>جهّز نصوصك للترجمة بين العربية واللغات الأخرى.</p>
+                <button onclick="openTool('المترجم الذكي')">
+                    اكتشف الأداة ←
+                </button>
+            </div>
+
+            <div class="card" data-name="إنشاء الصور تصميم صور">
+                <div class="icon">🎨</div>
+                <h3>إنشاء الصور</h3>
+                <p>استكشف أدوات تحويل الأوصاف النصية إلى صور.</p>
+                <button onclick="openTool('إنشاء الصور')">
+                    اكتشف الأداة ←
+                </button>
+            </div>
+
+            <div class="card" data-name="الدراسة التعليم التلخيص">
+                <div class="icon">📚</div>
+                <h3>مساعد الدراسة</h3>
+                <p>نظّم دراستك وتعلّم المفاهيم الصعبة بطريقة أبسط.</p>
+                <button onclick="openTool('مساعد الدراسة')">
+                    اكتشف الأداة ←
+                </button>
+            </div>
+
+            <div class="card" data-name="منشورات التواصل الاجتماعي">
+                <div class="icon">📱</div>
+                <h3>صانع المنشورات</h3>
+                <p>حضّر أفكارًا لمنشورات وسائل التواصل الاجتماعي.</p>
+                <button onclick="openTool('صانع المنشورات')">
+                    اكتشف الأداة ←
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="notice">
+        هذه نسخة أولية من واجهة الموقع. بعض الأدوات تحتاج إلى ربطها
+        بخدمات مناسبة قبل أن تتمكن من تنفيذ مهام الذكاء الاصطناعي.
+    </div>
+
+    <footer>
+        © 2026 AI Lebanon — مشروع مستقل قيد التطوير
+    </footer>
+
+    <script>
+        function searchTools() {
+            const input = document
+                .getElementById("searchInput")
+                .value
+                .trim()
+                .toLowerCase();
+
+            const cards = document.querySelectorAll(".card");
+
+            cards.forEach(function(card) {
+                const name = card.dataset.name.toLowerCase();
+
+                card.style.display = name.includes(input)
+                    ? ""
+                    : "none";
+            });
+        }
+
+        document
+            .getElementById("searchInput")
+            .addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    searchTools();
+                }
+            });
+
+        function openTool(name) {
+            alert(
+                "اخترت: " + name +
+                "\n\nسنطوّر هذه الأداة في المرحلة التالية."
+            );
+        }
+    </script>
+
+</body>
+</html>
+```
